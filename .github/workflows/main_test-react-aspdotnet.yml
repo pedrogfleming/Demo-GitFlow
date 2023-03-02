@@ -26,10 +26,10 @@ jobs:
         run: dotnet restore WebApp/WebApp.sln
 
       - name: Build with dotnet
-        run: dotnet build  --configuration Release ./webapi/webapi.csproj 
+        run: dotnet build  --configuration Release WebApp/webapi/webapi.csproj 
 
       - name: dotnet publish
-        run: dotnet publish ./webapi/webapi.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish WebApp/webapi/webapi.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2

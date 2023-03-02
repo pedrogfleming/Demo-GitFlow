@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore WebApp/WebApp.sln
 
       - name: Build with dotnet
         run: dotnet build  --configuration Release ./webapi/webapi.csproj 
